@@ -1,51 +1,19 @@
-# Nom du projet
-Si possible, ajoutez un logo ou une capture de l'application pour rendre votre page plus dynamique/attrayante.
+# Examen du cours "Systèmes distribués"
 
-- [Contexte](#contexte)
-- [Installation](#installation)
-- [Utilisation](#utilisation) 
-- [Liens utiles](#liens-utiles)
+Créer un dossier examen dans votre répertoire /work/C3/formation-isae/login.
+Mettre dans ce répertoire tous les fichiers nécessaires pour éxécuter votre code OpenMP et notebook Dask.
 
-## Contexte
+## Programme OpenMP
 
-Décrivez en quelques phrases le concept ou l'objectif de ce projet. Pensez à préciser s'il s'agit d'un projet spatial ou non.
+Le programme contenu dans le fichier reduction tab.f90 est extrait d’un code de chimie.
+Il s’agit de réduire un tableau tridimentionnel en un vecteur. Le but de ce TP est de paralléliser ce noyau de calcul sans toucher
+à l’ordre initial des boucles (i.e. k,j,i).
+1. Analyser le statut des variables et adapter le code source de façon à paralléliser la boucle la plus externe en k.
+2. Comparer les performances obtenues en utilisant l’association thread/coeur
+d’exécution par défaut sur Trex et en utilisant le mode d’association scatter.
+Proposer une explication quant aux mauvaises performances de ce dernier.
+3. Optimiser le code source pour le mode scatter en prenant en compte l’affinité
+mémoire en langage C. Pourquoi cette troisième série d’exécutions permet-elle d’obtenir les meilleures performances ? 
 
-Listez les points de contact du projet :
-- Responsable CNES
-- Responsable technique
-- Autres
 
-Vous pouvez également ajouter un lien vers le gitlab-pages du projet si vous en avez un.
-
-## Installation
-
-Décrivez les différentes étapes d'installation du projet pour quelqu'un qui partirait du dépôt GitLab cloné dans un environnement HPC. Pensez entre autres à :
-
-- Quel(s) module(s) importer ?
-- La liste de dépendances : est-elle bien renseignée dans un fichier requirements dans le dépôt ?
-- Y a-t-il des variables d'environnement à mettre en place ?
-
-Vous pouvez lister les commandes dans des encadrés, entrecoupés d'explications.
-
-```
-$ commande 1 
-$ commande 2   
-``` 
-
-## Utilisation
-
-Une fois le module installé, comment le lance-t-on ou lui fait-on appel ? Listez les différentes options avec si possible des illustrations du résultat obtenu. 
-
-Là-aussi, vous pouvez utiliser des encadrés pour le code.
-
-```
-$ commande --option
-``` 
-
-## Liens utiles
-- [Confluence de l'Usine Logicielle](https://confluence.cnes.fr/pages/viewpage.action?pageId=17961975)
-    - [Manuel pour l'utilisation de GitLab](https://confluence.cnes.fr/display/USINELOG/GitLab+-+Manuel+utilisateur)
-    - [Comment choisir son workflow Git](https://confluence.cnes.fr/display/USINELOG/Gestion+de+configuration+-+Choix+du+flow+Git)
-    - [Manuel pour l'utilisation de GitLab-CI](https://confluence.cnes.fr/display/USINELOG/GitLab-CI)
-- [Demandes de support à l'UL](https://confluence.cnes.fr/display/USINELOG/Les+demandes+de+support)
-- Vos propres pages de documentation :D
+## Notebook Jupyter
