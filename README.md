@@ -8,10 +8,7 @@ Mettre dans ce répertoire tous les fichiers nécessaires pour compiler et éxec
 Le programme contenu dans le fichier reduction_tab.c est extrait d’un code de chimie.
 Il s’agit de réduire un tableau tridimentionnel en un vecteur. Le but de ce TP est de paralléliser avec des directives OpenMP ce noyau de calcul sans toucher à l’ordre initial des boucles (i.e. k,j,i).
 1. Analyser le statut des variables et adapter le code source de façon à paralléliser la boucle la plus externe en k.
-2. Comparer les performances obtenues sur TREX en utilisant : 
-- l’association thread/coeur d’exécution par défaut 
-- en utilisant le mode d’association scatter
-Proposer une explication quant aux mauvaises performances de ce dernier.
+2. Comparer les performances obtenues sur TREX en fonction du nombre de threads d’exécution 
 
 | Nombres de threads | Temps "elapsed"  | Accélération =(temps elapsed mono / temps "elapsed" //) |
 | ------ | ------ |------- |
@@ -22,7 +19,7 @@ Proposer une explication quant aux mauvaises performances de ce dernier.
 |       4 |        |        |
 
 
-3. Optimiser le code source pour le mode scatter en prenant en compte l’affinité mémoire en langage C. Pourquoi cette troisième série d’exécutions permet-elle d’obtenir les meilleures performances ? 
+3. Avez-vous une idée pour optimiser le code source en prenant en compte l’affinité mémoire en langage C? 
 
 
 ## Notebook Jupyter
