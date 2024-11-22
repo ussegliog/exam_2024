@@ -1,7 +1,7 @@
 # Examen du cours "Systèmes distribués"
 
 Créer un dossier examen dans votre répertoire /work/C3/formation-isae/login.
-Mettre dans ce répertoire tous les fichiers nécessaires pour éxécuter votre code OpenMP et notebook Dask.
+Mettre dans ce répertoire tous les fichiers nécessaires pour compiler et éxecuter votre code OpenMP ainsi que votre notebook Dask.
 
 ## Programme de réduction d'un atableau à paralléliser avec OpenMP
 
