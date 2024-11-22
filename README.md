@@ -10,9 +10,9 @@ Il s’agit de réduire un tableau tridimentionnel en un vecteur. Le but de ce T
 1. Analyser le statut des variables et adapter le code source de façon à paralléliser la boucle la plus externe en k.
 2. Comparer les performances obtenues en utilisant l’association thread/coeur d’exécution par défaut sur Trex et en utilisant le mode d’association scatter.
 
-| Nombres de threads | Temps "elapsed"  | Accélération  |
+| Nombres de threads | Temps "elapsed"  | Accélération =(temps elapsed mono / temps "elapsed" //) |
 | ------ | ------ |------- |
-|     mono (avant la parallélisation)   |        |        |
+|     mono (avant la parallélisation)   |        |    1    |
 |       1 |        |        |
 |       2 |        |        |
 |       3 |        |        |
