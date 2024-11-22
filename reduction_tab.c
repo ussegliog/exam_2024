@@ -20,7 +20,7 @@
 #define VAL_NMOL 10000
 #endif
 #ifndef VAL_N
-#define VAL_N 50
+#define VAL_N 20
 #endif
 
 // Init array to zero
