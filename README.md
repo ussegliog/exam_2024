@@ -20,7 +20,7 @@ Mettre dans ce répertoire tous les fichiers nécessaires pour compiler et éxec
 Le programme contenu dans le fichier reduction_tab.c est extrait d’un code de chimie.
 Utiliser un terminal et les scripts vus dans le BE OpenMP pour compiler et exécuter le programme.
 
-Il s’agit de réduire un tableau tridimensionnel en un vecteur. Le but de ce TP est de paralléliser avec des directives OpenMP ce noyau de calcul sans toucher à l’ordre initial des boucles (i.e. k,j,i).
+Il s’agit de réduire un tableau tridimensionnel en un vecteur. Le but de ce TP est de paralléliser avec des directives OpenMP ce noyau de calcul.
 1. Analyser le statut des variables et adapter le code source de façon à paralléliser la boucle la plus externe en k.
 2. Comparer les performances obtenues sur TREX en fonction du nombre de threads d’exécution 
 
