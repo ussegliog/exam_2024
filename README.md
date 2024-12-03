@@ -8,7 +8,7 @@ Barème :
 ## Evaluation théorique : questionnaire à rendre à la fin de l'examen
 
 Un questionnaire papier vous a été distribué.
-Certaines questions peuvent vous aider pour compléter les codes C et Python.
+Certaines questions peuvent vous aider pour compléter les codes C et Python et d'autres nécessitent d'avoir fait les exercices partiques.
 
 ## Evaluation pratique
 
