@@ -11,6 +11,7 @@
 #include <string.h>
 #include <time.h>
 #include <sys/time.h>
+#include <omp.h>
 
 // Dimension par defaut de la taille des matrices
 #ifndef VAL_NMOLEC
@@ -48,7 +49,7 @@ int main() {
 	}
     }
 
-  double tab1[nmol], tab2[nmol];
+  double tab2[nmol];
   clear(tab2, nmol);
 
   // start cpu time.
@@ -59,21 +60,31 @@ int main() {
   gettimeofday(&t_elapsed_0, NULL);
 
   ////////////// Parallel loops ///////////////
-  for(int k=0; k<nmolec; k++)
-    {
-      clear(tab1, nmol);
+  omp_set_num_threads(4);
+  
+  #pragma omp parallel
+  {
+#pragma omp for schedule(static)
+    //#pragma omp for schedule(static) reduction(+:tab2[:nmol])
+    for(int k=0; k<nmolec; k++)
+      {
+	double tab1[nmol];
+	clear(tab1, nmol);
 
-      for(int j=0; j<n; j++)
+	for(int j=0; j<n; j++)
+	  {
+	    for(int i=0; i<nmol; i++)
+	      {
+		tab1[i] += tab[k][j][i];
+	      }
+	  }
+#pragma omp critical
 	{
-	  for(int i=0; i<nmol; i++)
-	    {
-	      tab1[i] += tab[k][j][i];
-	    }
+	  for(int l=0; l<nmol; l++)
+	    tab2[l] += 2*tab1[l];
 	}
-
-      for(int l=0; l<nmol; l++)
-	tab2[l] += 2*tab1[l];
-    }
+      }
+  } // end of //
 
   // Estimated elapsed time 
   struct timeval t_elapsed_1;
@@ -113,6 +124,7 @@ int main() {
     }
 
   ////////////// Print results /////////////
+  //// err must be equal to 0 at every execution
   fprintf(stdout, "\n\n"
           "   Temps elapsed       : %10.3E sec.\n"
           "   Temps CPU           : %10.3E sec.\n"
