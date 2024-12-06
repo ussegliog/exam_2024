@@ -12,7 +12,10 @@ Certaines questions peuvent vous aider pour compléter les codes C et Python et 
 
 ## Evaluation pratique
 
+Connectez-vous au juyterhub du CNES (https://jupyterhub.cnes.fr/) et choisissez le profil `Formation ISAE - CPU 2019` avec 4 core.
+
 Créer un dossier examen : /work/C3/formation-isae/login/examen.
+
 Mettre dans ce répertoire tous les fichiers nécessaires pour compiler et éxecuter votre code OpenMP ainsi que votre notebook Dask.
 
 ### Programme de réduction d'un tableau à paralléliser avec OpenMP
