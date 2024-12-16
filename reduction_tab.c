@@ -60,12 +60,11 @@ int main() {
   gettimeofday(&t_elapsed_0, NULL);
 
   ////////////// Parallel loops ///////////////
-  omp_set_num_threads(4);
   
   #pragma omp parallel
   {
-#pragma omp for schedule(static)
-    //#pragma omp for schedule(static) reduction(+:tab2[:nmol])
+//#pragma omp for schedule(static)
+#pragma omp for schedule(static) reduction(+:tab2[:nmol])
     for(int k=0; k<nmolec; k++)
       {
 	double tab1[nmol];
@@ -78,7 +77,7 @@ int main() {
 		tab1[i] += tab[k][j][i];
 	      }
 	  }
-#pragma omp critical
+//#pragma omp critical
 	{
 	  for(int l=0; l<nmol; l++)
 	    tab2[l] += 2*tab1[l];
